@@ -1,0 +1,57 @@
+class TodosModel {
+  List<Todos>? todos;
+  int? total;
+  int? skip;
+  int? limit;
+
+  TodosModel({this.todos, this.total, this.skip, this.limit});
+
+  TodosModel.fromJson(Map<String, dynamic> json) {
+    if (json['todos'] != null) {
+      todos = <Todos>[];
+      json['todos'].forEach((v) {
+        todos!.add(Todos.fromJson(v));
+      });
+    }
+    total = json['total'];
+    skip = json['skip'];
+    limit = json['limit'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = {};
+    if (todos != null) {
+      data['todos'] = todos!.map((v) => v.toJson()).toList();
+    }
+    data['total'] = total;
+    data['skip'] = skip;
+    data['limit'] = limit;
+
+    return data;
+  }
+}
+
+class Todos {
+  int? id;
+  String? todo;
+  bool? completed;
+  int? userId;
+
+  Todos({this.id, this.todo, this.completed, this.userId});
+
+  Todos.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    todo = json['todo'];
+    completed = json['completed'];
+    userId = json['userId'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['todo'] = this.todo;
+    data['completed'] = this.completed;
+    data['userId'] = this.userId;
+    return data;
+  }
+}

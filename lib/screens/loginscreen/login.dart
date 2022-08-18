@@ -28,7 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
         
          child: Column(children: [
             SizedBox(height: MediaQuery.of(context).size.height*0.15,),
-            Image.asset("lib/assest/appbar.png",width: MediaQuery.of(context).size.width*0.35,),
+            Image.asset("lib/assets/appbar.png",width: MediaQuery.of(context).size.width*0.35,),
             SizedBox(height: MediaQuery.of(context).size.height*0.03,),
             Text("HOŞGELDİNİZ",style: Theme.of(context).textTheme.headlineSmall?.merge(TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),),
             SizedBox(height: MediaQuery.of(context).size.height*0.01,),

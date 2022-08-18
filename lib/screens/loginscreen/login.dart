@@ -23,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
       children: [
          
          Container(
-          color: Color.fromARGB(255, 90, 21, 228),
+          color: Color.fromARGB(255, 255, 180, 106),
           width: MediaQuery.of(context).size.width,
         
          child: Column(children: [
@@ -39,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
         Container(
           height: MediaQuery.of(context).size.height*0.50,
           width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(20)),
+            decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.vertical(top: Radius.circular(30),)),
           child: Column(
             
             children: [
@@ -75,13 +75,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Alanları doldurun")));
                     break;
                   case StatusCheck.responseOk:
-                   Navigator.push(context, MaterialPageRoute(builder: (context)=>MainScreem(res: res,)));
+                   Navigator.push(context, MaterialPageRoute(builder: (context)=>MainScreen(res: res,)));
                     break;
                   case StatusCheck.responseError:
                     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Böyle bir kullanıcı bulunamadı")));
                     break;
                 }
-              }, child: Text("Giriş Yapın",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 20),),style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color.fromARGB(255, 90, 21, 228)), minimumSize: MaterialStateProperty.all(const Size(200, 50)),shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              }, child: Text("Giriş Yapın",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 20),),style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color.fromARGB(255, 255, 180, 106)), minimumSize: MaterialStateProperty.all(const Size(200, 50)),shape: MaterialStateProperty.all<RoundedRectangleBorder>(
     RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(18.0),
       

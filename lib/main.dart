@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
       appBarTheme: AppBarTheme(
-        color: Color.fromARGB(255, 63, 65, 158),
+        color: Color.fromARGB(255, 255, 180, 106),
   
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(bottom: Radius.circular(30))),
       ),

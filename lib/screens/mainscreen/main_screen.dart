@@ -9,21 +9,26 @@ import 'package:provider/provider.dart';
 
 import '../user_todos/model/todos.dart';
 
-class MainScreem extends StatefulWidget {
-  const MainScreem({required this.res, Key? key}) : super(key: key);
+class MainScreen extends StatefulWidget {
+  const MainScreen({required this.res, Key? key}) : super(key: key);
   final ResposnseUrl res;
   @override
-  State<MainScreem> createState() => _MainScreemState();
+  State<MainScreen> createState() => _MainScreenState();
 }
 
-class _MainScreemState extends State<MainScreem> {
+class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      appBar: AppBar(
+        title: Text("Welcome Back"),
+        centerTitle: true,
+      ),
+      body: 
+      Column(
         children: [
           Container(
-            width: 100,
+           
             height: 150,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
@@ -31,12 +36,18 @@ class _MainScreemState extends State<MainScreem> {
                   image: NetworkImage(widget.res.model?.image ?? "")),
             ),
           ),
+          SizedBox(height: MediaQuery.of(context).size.height*0.03,),
           Center(
             child: Text(
-              "Hoşgeldiniz  ${widget.res.model?.firstName ?? ""} ${widget.res.model?.lastName ?? ""}",
-              style: TextStyle(fontWeight: FontWeight.bold),
+              "${widget.res.model?.firstName ?? ""} ${widget.res.model?.lastName ?? ""}",
+              style: Theme.of(context).textTheme.headline3!.merge(TextStyle(color: Colors.black,fontWeight: FontWeight.bold)),
             ),
+            
           ),
+          Center(child:Text("Welcome",style: Theme.of(context).textTheme.headline3!.merge(TextStyle(color: Colors.black,fontWeight: FontWeight.bold))),),
+          
+          SizedBox(height: MediaQuery.of(context).size.height*0.1,),
+         
           TextButton(
               onPressed: () async{
 
@@ -49,7 +60,7 @@ class _MainScreemState extends State<MainScreem> {
                               child: const UserTodosView(),
                             )));
               },
-              child: Text("Todos Sayfası"))
+              child: Text("Todos Page",style: Theme.of(context).textTheme.headline4!.merge(TextStyle(fontWeight: FontWeight.w500,color: Color.fromARGB(255, 255, 180, 106))),))
         ],
       ),
     );

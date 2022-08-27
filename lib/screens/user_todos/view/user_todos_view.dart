@@ -20,6 +20,7 @@ class _UserTodosViewState extends State<UserTodosView> {
     final viewmodel = Provider.of<UserTodosViewmodel>(context);
     return Scaffold(
       appBar: AppBar(
+        
         title: const Text("My todos"),
       ),
       body: viewmodel.state==StatusDataCheck.okay?

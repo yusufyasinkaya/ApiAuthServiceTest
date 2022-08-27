@@ -60,7 +60,7 @@ class _MainScreenState extends State<MainScreen> {
                               child: const UserTodosView(),
                             )));
               },
-              child: Text("Todos Page",style: Theme.of(context).textTheme.headline4!.merge(TextStyle(fontWeight: FontWeight.w500,color: Color.fromARGB(255, 255, 180, 106))),))
+              child: Text("Todos Page",style: Theme.of(context).textTheme.headline4!.merge(TextStyle(fontWeight: FontWeight.w500,color: Colors.black))),)
         ],
       ),
     );
